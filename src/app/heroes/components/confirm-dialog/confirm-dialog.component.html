@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>¿Está seguro?</h2>
+<mat-dialog-content>
+  <p>Este proceso no es reversible, esta apunto de eliminar {{data.superhero}}</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-flat-button color="primary" (click)="onNoClick()">Volver
+  <mat-icon> arrow_back_ios</mat-icon>
+  </button>
+  <span class="spacer"></span>
+  <button mat-flat-button color="warn"(click)="onConfirm()">Eliminar
+    <mat-icon>delete</mat-icon>
+  </button>
+</mat-dialog-actions>
