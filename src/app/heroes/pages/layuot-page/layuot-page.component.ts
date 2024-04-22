@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../../auth/services/auth.service';
+import { Router } from '@angular/router';
+import { User } from '../../../auth/interfaces/user.interface';
 
 @Component({
   selector: 'heroes-layuot-page',
@@ -24,4 +27,18 @@ export class LayuotPageComponent {
       url: './search'
     },
   ]
+
+  constructor(
+    private authService: AuthService,
+    private router:Router
+  ){ }
+
+  get user(): User | undefined{
+    return this.authService.currentUser;
+  }
+
+  onLogout():void{
+    this.authService.logout()
+    this.router.navigate(['auth'])
+  }
 }
